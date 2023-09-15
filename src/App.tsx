@@ -5,6 +5,7 @@ import { Textarea } from "./components/ui/textarea";
 import { Label } from "./components/ui/label";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "./components/ui/select";
 import { Slider } from "./components/ui/slider";
+import { VideoInputForm } from "./components/video-input.form";
 
 
 
@@ -40,46 +41,7 @@ export function App() {
         </div>
 
         <aside className="w-80 space-y-6">
-          <form className="space-y-6">
-            <label
-              htmlFor="video"
-              className="
-            border
-            flex
-            rounded-md
-            aspect-video
-            cursor-pointer
-            border-dashed
-            text-sm
-            flex-col
-            gap-2
-            items-center
-            justify-center
-            text-muted-foreground
-            hover:bg-primary/5
-            ">
-              <FileVideo className="w-4 h-4" />
-              Select a video
-            </label>
-
-            <input type="file" id="video" accept="video/mp4" className="sr-only" />
-
-            <Separator />
-
-            <div className="space-y-2">
-              <Label htmlFor="transcription_promp">Transcription prompt</Label>
-              <Textarea
-                id="transcription_promp"
-                className="h-20 leading-relaxed resize-none"
-                placeholder="Include key words mentioned in video separated by comma"
-              />
-            </div>
-
-            <Button type="submit" className="w-full">
-              <Upload className="h-4 w-4 ml-2" />
-              Upload video
-            </Button>
-          </form>
+          <VideoInputForm />
 
           <Separator />
 
